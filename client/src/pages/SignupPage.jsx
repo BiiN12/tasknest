@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import "./SignupPage.css"
+import "./AuthPage.css"
 
 function SignupPage() {
     const [username, setUsername] = useState('');
@@ -25,7 +25,7 @@ function SignupPage() {
 
             if (data.token) {
                 localStorage.setItem('token', data.token);
-                navigate('/');
+                navigate('/todos');
             }
         } catch (error) {
             console.error(error);

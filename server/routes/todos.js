@@ -1,4 +1,5 @@
 import { Router } from "express";
+import cors from "cors";
 import {
   getTodos,
   createTodo,
@@ -8,6 +9,8 @@ import {
 import authMiddleware from "../middleware/authMiddleware.js";
 
 const router = Router();
+
+router.use(cors());
 router.use(authMiddleware);
 
 router.get("/", getTodos);

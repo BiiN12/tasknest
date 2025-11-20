@@ -30,11 +30,11 @@ export const createTodo = async (req, res) => {
 export const updateTodo = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, completed } = req.body;
+    const { completed } = req.body;
 
     const result = await pool.query(
-      "UPDATE todos SET title = $1, completed = $2 WHERE id = $3 AND user_id = $4 RETURNING *",
-      [title, completed, id, req.userId]
+      "UPDATE todos SET completed = $1 WHERE id = $2 AND user_id = $3 RETURNING *",
+      [completed, id, req.userId]
     );
 
     if (result.rows.length === 0) {

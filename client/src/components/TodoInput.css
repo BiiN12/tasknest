@@ -1,0 +1,41 @@
+.task-form {
+    display: flex;
+    padding: 10px;
+}
+
+.task-form input {
+    margin-bottom: 1rem;
+    padding: 15px;
+    color: #4B5563;
+    font-size: 1rem;
+    width: 90%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #D1D5DB;
+}
+
+.task-form input::placeholder {
+    color: #9CA3AF;
+}
+
+.task-form input:focus {
+    border-color: #1F2937;
+}
+
+.task-form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    background-color: #1F2937;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.task-form button:hover {
+    background-color: #111827;
+}

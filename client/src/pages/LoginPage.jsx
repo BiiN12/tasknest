@@ -1,33 +1,21 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import "./SignupPage.css"
+import { useAuth } from "../contexts/AuthContext"
+import "./AuthPage.css"
 
 function LoginPage() {
+    const { login, user, isAuthenticated } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
+    const [error, setError] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            const response = await fetch('http://localhost:3000/api/auth/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ email, password })
-            });
+        const result = await login({ email, password });
 
-            const data = await response.json();
-            console.log(data);
-
-            if (data.token) {
-                localStorage.setItem('token', data.token);
-                navigate('/');
-            }
-        } catch (error) {
-            console.error(error);
+        if (!result.success) {
+            setError(result.error);
         }
     };
   return (

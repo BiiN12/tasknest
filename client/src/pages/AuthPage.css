@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
     background-color: #f5f5f5;
     display: flex;
     justify-content: center;
@@ -22,7 +21,7 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
+.container h1 {
     color: #1f2937;
 }
 
@@ -57,7 +56,7 @@ h1 {
     border-color: #1f2937;
 }
 
-button {
+.container button {
     width: 100%;
     padding: 0.75rem 2rem;
     background-color: #1f2937;
@@ -69,18 +68,18 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.container button:hover {
     background-color: #111827;
 }
 
-p {
+.container p {
     color: #718096;
     font-size: 0.875rem;
     font-weight: 400;
     margin-top: 1rem;
 }
 
-p a {
+.container p a {
     color: #1f2937;
     text-decoration: none;
     font-weight: 500;
